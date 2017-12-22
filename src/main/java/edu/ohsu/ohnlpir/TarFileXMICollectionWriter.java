@@ -79,8 +79,6 @@ public class TarFileXMICollectionWriter extends CasConsumer_ImplBase {
         LOGGER.log(Level.INFO, "outdir: " + outputRootDir);
         LOGGER.log(Level.INFO, "outfile: " + outputFilePath);
 
-        LOGGER.log(Level.INFO, "zebras: " + context.getConfigParameterValue("Zebra"));
-
         outfile = new File(outputRootDir, outputFilePath);
 
         try {
