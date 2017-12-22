@@ -56,8 +56,10 @@ import java.util.List;
 
 public class XmlCollectionReader extends JCasCollectionReader_ImplBase {
 
+    public static final String PARAM_INPUTFILE = "InputFile";
+
     @ConfigurationParameter(
-            name = "InputFile",
+            name = PARAM_INPUTFILE,
             description = "Path to input XML file."
     )
     private String inputFilePath;
@@ -73,15 +75,7 @@ public class XmlCollectionReader extends JCasCollectionReader_ImplBase {
     public void initialize(final UimaContext context) throws ResourceInitializationException {
         super.initialize(context);
 
-        ConfigurationParameterInitializer.initialize(this, getUimaContext());
-        ExternalResourceInitializer.initialize(this, getUimaContext());
-
-
         logger = UIMAFramework.getLogger(XmlCollectionReader.class);
-
-        String zebraVal = (String)getConfigParameterValue("Zebra");
-
-        logger.log(Level.INFO, "Zebra config param is: " + zebraVal);
 
         logger.log(Level.INFO, "In Init for XML collection reader!");
 
